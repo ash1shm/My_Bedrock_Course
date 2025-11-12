@@ -1,7 +1,7 @@
 import { BedrockClient, ListFoundationModelsCommand, GetFoundationModelCommand } from '@aws-sdk/client-bedrock'
 
 const client = new BedrockClient({
-    region: 'eu-central-1'
+    region: 'us-east-1'
 });
 
 async function listFoundationModels(){
@@ -20,4 +20,6 @@ async function getModelInfo(modelName: string){
     console.log(response)
 }
 
-getModelInfo('anthropic.claude-v2');
+// listFoundationModels();
+// getModelInfo('anthropic.claude-v2');
+getModelInfo('anthropic.claude-v2:0:18k')

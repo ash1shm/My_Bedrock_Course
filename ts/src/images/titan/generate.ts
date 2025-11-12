@@ -8,7 +8,7 @@ const client = new BedrockRuntimeClient({ region: 'us-west-2' })
 const titanImageConfig = {
     taskType: "TEXT_IMAGE",
     textToImageParams: {
-        text: "cat on a mat on a country hillside",      
+        text: "Hanuman blessing the entire earth",      
     },
     imageGenerationConfig: {
         numberOfImages: 1,
@@ -26,7 +26,7 @@ async function invokeModel() {
         contentType: 'application/json'
     }));
     const responseBody = JSON.parse(new TextDecoder().decode(response.body));
-    saveImage(responseBody.images[0], 'cat.png');
+    saveImage(responseBody.images[0], 'hanuman.png');
 }
 
 function saveImage(base64Data: string, fileName: string) {

@@ -2,8 +2,8 @@ import { BedrockRuntimeClient, InvokeModelCommand } from '@aws-sdk/client-bedroc
 
 const client = new BedrockRuntimeClient({ region: 'us-west-2' })
 
-const fact = "The first moon landing was in 1969."
-const animal = "cat"
+const fact = "India got independance in 1947."
+const animal = "tiger"
 
 async function main() {
     const response = await client.send(new InvokeModelCommand({

@@ -7,10 +7,10 @@ function getConfig(inputImage: string){
     return {
         taskType: "INPAINTING",
         inPaintingParams: {
-            text: "Make the cat black and blue",
+            text: "Change image background to show pleasant garden",
             negativeText: "bad quality, low res",
             image: inputImage,
-            maskPrompt: "cat"
+            maskPrompt: "Hanuman"
         },
         imageGenerationConfig: {
             numberOfImages: 1,
@@ -22,7 +22,7 @@ function getConfig(inputImage: string){
 }
 
 async function invokeModel() {
-    const image = readImage('cat.png');
+    const image = readImage('hanuman.png');
     const config = getConfig(image);
     const response = await client.send(new InvokeModelCommand({
         modelId: 'amazon.titan-image-generator-v1',
@@ -32,7 +32,7 @@ async function invokeModel() {
     }));
 
     const responseBody = JSON.parse(new TextDecoder().decode(response.body));
-    saveImage(responseBody.images[0], 'catEdited.png');
+    saveImage(responseBody.images[0], 'hanumanEdited.png');
 }
 
 function readImage(imagePath:string){
