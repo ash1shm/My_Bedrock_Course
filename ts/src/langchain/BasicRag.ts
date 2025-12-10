@@ -1,5 +1,6 @@
 import { BedrockEmbeddings } from "@langchain/aws";
-import { Bedrock } from "@langchain/community/llms/bedrock";
+//import { Bedrock } from "@langchain/community/llms/bedrock";
+import { BedrockChat as Bedrock} from '@langchain/community/chat_models/bedrock' 
 import { MemoryVectorStore } from 'langchain/vectorstores/memory'
 import { Document } from '@langchain/core/documents'
 import { ChatPromptTemplate } from '@langchain/core/prompts';
@@ -14,11 +15,11 @@ const model = new Bedrock({
 const myData = [
     "The weather is nice today.",
     "Last night's game ended in a tie.",
-    "Don likes to eat pizza.",
-    "Don likes to eat pasta.",
+    "Ashish likes to eat Thai green curry.",
+    "Ashish likes to eat vada-pav.",
 ];
 
-const question = "What are Don's favorite foods?";
+const question = "Where in Toronto Ashish's favorite foods can be found?";
 
 async function main() {
     const vectorStore = new MemoryVectorStore(

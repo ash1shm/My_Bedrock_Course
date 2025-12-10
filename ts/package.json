@@ -21,7 +21,7 @@
     "@aws-sdk/client-s3": "^3.864.0",
     "@aws-sdk/s3-request-presigner": "^3.864.0",
     "@langchain/aws": "^0.1.13",
-    "@langchain/community": "^1.0.2",
+    "@langchain/community": "^0.3.55",
     "@types/aws-lambda": "^8.10.152",
     "langchain": "^0.3.30",
     "pdf-parse": "^1.1.1"

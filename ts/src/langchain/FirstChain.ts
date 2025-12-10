@@ -23,7 +23,7 @@ async function firstChain() {
     const chain = prompt.pipe(model);
 
     const response = await chain.invoke({
-        product_name: 'bicycle'
+        product_name: 'iphone'
     })
     console.log(response)
 }
